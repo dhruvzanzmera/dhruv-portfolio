@@ -6,7 +6,7 @@ export default function ScrollBar() {
   return (
     <motion.div
       style={{ scaleX }}
-      className="fixed left-0 top-0 z-[90] h-1 w-full origin-left bg-gradient-to-r from-hot to-electric"
+      className="fixed left-0 top-0 z-[90] h-0.5 w-full origin-left bg-gradient-to-r from-hot to-electric"
     />
   );
 }

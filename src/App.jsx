@@ -11,6 +11,7 @@ import Process from "./components/Process";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import FloatingActions from "./components/FloatingActions";
 
 export default function App() {
   // smooth inertia scrolling (skipped when the visitor prefers reduced motion)
@@ -43,6 +44,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <FloatingActions />
     </MotionConfig>
   );
 }

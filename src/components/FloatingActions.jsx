@@ -1,0 +1,31 @@
+import { profile } from "../data/content";
+
+export default function FloatingActions() {
+  return (
+    <aside
+      aria-label="Quick actions"
+      className="fixed bottom-5 right-5 z-[85] flex flex-col items-end gap-3 sm:bottom-7 sm:right-7"
+    >
+      <a
+        href="#home"
+        aria-label="Go to top"
+        title="Go to top"
+        className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-haze text-bone shadow-lg shadow-black/20 transition-all hover:-translate-y-1 hover:border-hot/50 hover:text-hot"
+      >
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 19V5M5 12l7-7 7 7" />
+        </svg>
+      </a>
+      <a
+        href={`mailto:${profile.email}`}
+        className="flex items-center gap-2 rounded-full bg-hot px-5 py-3 text-sm font-semibold text-void shadow-lg shadow-black/20 transition-all hover:-translate-y-1 hover:brightness-105"
+      >
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="5" width="18" height="14" rx="2" />
+          <path d="m3 7 9 6 9-6" />
+        </svg>
+        Contact
+      </a>
+    </aside>
+  );
+}

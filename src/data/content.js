@@ -1,14 +1,13 @@
-// Add confirmed project, contact, and experience details here as they become available.
-
 import alexMorganPortfolioImage from "../assets/Alex Morgan Portfolio.png";
 import novaCartImage from "../assets/Nova Cart.png";
 import vertexSolutionsImage from "../assets/Vertex Solutions.png";
+import skyPulseImage from "../assets/SkyPulse Weather Dashboard.png";
 
 export const profile = {
   name: "Dhruv Zanzmera",
   role: "Senior Full-Stack Developer",
   company: "PixerFect Solutions LLP",
-  email: "",
+  email: "dhruvzanzmera01@gmail.com",
   github: "",
   linkedin: "",
 };
@@ -22,9 +21,26 @@ export const navLinks = [
 
 export const projects = [
   {
+    title: "SkyPulse",
+    image: skyPulseImage,
+    liveUrl: "https://skypulse-weather-dashboard.onrender.com/",
+    summary: "A responsive weather dashboard with live forecasts, air-quality insights, and location-aware city search.",
+    highlights: ["Live weather & air quality", "City search", "Geolocation", "Responsive design"],
+    tech: [
+      { category: "Structure", items: ["HTML5"] },
+      { category: "Styling", items: ["CSS3", "Responsive layout"] },
+      { category: "Interactivity", items: ["Vanilla JavaScript", "Fetch API"] },
+      { category: "Weather data", items: ["Open-Meteo forecast API", "Open-Meteo air quality API"] },
+      { category: "Location", items: ["Open-Meteo geocoding", "OpenStreetMap Nominatim reverse geocoding", "Browser geolocation"] },
+      { category: "Icons & typography", items: ["Font Awesome", "Google Fonts"] },
+    ],
+  },
+  {
     title: "Alex Morgan Portfolio",
     image: alexMorganPortfolioImage,
-    summary: "Developer portfolio showcasing skills, services, experience, projects, and contact details.",
+    liveUrl: "https://alex-morgan-portfolio-one.vercel.app/",
+    summary: "A motion-led portfolio concept that brings a developer’s work, experience, and services together in one polished experience.",
+    highlights: ["Responsive design", "GSAP", "ScrollTrigger", "Vanilla JavaScript"],
     tech: [
       { category: "Structure", items: ["HTML5"] },
       { category: "Styling", items: ["CSS3", "Tailwind CSS (via CDN)"] },
@@ -41,7 +57,9 @@ export const projects = [
   {
     title: "Nova Cart",
     image: novaCartImage,
-    summary: "Storefront demo for curated home, tech, fitness, and lifestyle products.",
+    liveUrl: "https://nova-cart-phi.vercel.app/",
+    summary: "A bright storefront concept for home, tech, fitness, and lifestyle finds, with hands-on shopping interactions throughout.",
+    highlights: ["Product filters", "Cart & wishlist UI", "Responsive navigation", "Vanilla JavaScript"],
     tech: [
       { category: "Structure", items: ["HTML5"] },
       { category: "Styling", items: ["CSS3", "Tailwind CSS (via CDN)"] },
@@ -70,7 +88,9 @@ export const projects = [
   {
     title: "Vertex Solutions",
     image: vertexSolutionsImage,
-    summary: "Company landing page highlighting cloud engineering and enterprise software services.",
+    liveUrl: "https://vertex-solutions-theta.vercel.app/",
+    summary: "A confident company landing page concept presenting cloud engineering and enterprise software services with animated visual detail.",
+    highlights: ["Responsive layout", "CSS animations", "Service cards", "HTML & CSS"],
     tech: [
       { category: "Structure", items: ["HTML5"] },
       { category: "Styling", items: ["CSS3 (written inside the HTML file)"] },
@@ -94,35 +114,36 @@ export const projects = [
 
 export const processSteps = [
   {
-    title: "Understand the goal",
-    text: "Get clear on the people the product is for and the problem it needs to solve.",
+    title: "Start with the why",
+    text: "Understand the audience, the opportunity, and what a successful outcome should look like.",
   },
   {
-    title: "Plan the solution",
-    text: "Break the requirements into practical steps across the frontend and backend.",
+    title: "Shape the direction",
+    text: "Turn the brief into a considered structure, clear priorities, and a practical plan.",
   },
   {
-    title: "Build and refine",
-    text: "Develop the product in focused pieces and refine them as the work takes shape.",
+    title: "Design, build, refine",
+    text: "Bring the experience to life with purposeful interfaces and dependable functionality, refining the details along the way.",
   },
   {
-    title: "Review and deliver",
-    text: "Check the completed work against the goal and prepare it for delivery.",
+    title: "Polish and deliver",
+    text: "Review the details, interactions, and responsive experience before preparing the work for release.",
   },
 ];
 
 export const stack = [];
 
 export const about = [
-  "I'm Dhruv Zanzmera, a Senior Full-Stack Developer at PixerFect Solutions LLP.",
-  "I work across frontend and backend development. More about my projects and experience will be added here soon.",
+  "I’m Dhruv Zanzmera, a Senior Full-Stack Developer at PixerFect Solutions LLP.",
+  "I work across frontend and backend development, bringing a product-minded perspective to the way web experiences are planned, built, and refined.",
 ];
 
 export const experience = [
   {
     role: profile.role,
     company: profile.company,
-    period: "Current",
+    period: "Present",
+    summary: "Working across frontend and backend development to shape considered, user-focused web experiences.",
     points: [],
   },
 ];

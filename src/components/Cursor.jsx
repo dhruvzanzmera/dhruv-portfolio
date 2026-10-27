@@ -25,7 +25,7 @@ export default function Cursor() {
       aria-hidden="true"
       style={{ x, y }}
       animate={{ scale: big ? 3.5 : 1 }}
-      className="pointer-events-none fixed left-0 top-0 z-[100] -ml-2 -mt-2 hidden h-4 w-4 rounded-full bg-white mix-blend-difference [@media(pointer:fine)]:block"
+      className="pointer-events-none fixed left-0 top-0 z-[100] -ml-2 -mt-2 hidden h-3.5 w-3.5 rounded-full bg-hot mix-blend-difference [@media(pointer:fine)]:block"
     />
   );
 }

@@ -9,12 +9,12 @@ export default function SectionHeading({ title, text }) {
           whileInView={{ y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display text-[clamp(2.2rem,7vw,5.5rem)] font-black leading-none"
+          className="font-display text-[clamp(2.2rem,7vw,5.5rem)] font-bold leading-none tracking-[-0.055em]"
         >
           {title}
         </motion.h2>
       </div>
-      {text && <p className="mt-4 max-w-xl text-dim">{text}</p>}
+      {text && <p className="mt-4 max-w-xl leading-relaxed text-dim">{text}</p>}
     </div>
   );
 }

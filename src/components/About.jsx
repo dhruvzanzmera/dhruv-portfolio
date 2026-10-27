@@ -19,35 +19,39 @@ export default function About() {
 
   return (
     <section id="about" className="mx-auto max-w-7xl px-5 py-20 md:py-32">
-      <SectionHeading title="About me" />
+      <SectionHeading title="Behind the build" />
 
-      <p ref={ref} className="max-w-5xl font-display text-xl font-semibold leading-snug sm:text-3xl lg:text-4xl">
+      <p ref={ref} className="max-w-5xl font-display text-xl font-medium leading-[1.4] tracking-tight sm:text-3xl lg:text-4xl">
         {words.map((w, i) => (
           <Word key={i} word={w} progress={scrollYProgress} range={[i / words.length, (i + 1) / words.length]} />
         ))}
       </p>
 
-      <div id="experience" className="mt-20 grid gap-6 md:grid-cols-2">
-        {experience.map((job) => (
-          <motion.div
-            key={job.role + job.company}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="rounded-3xl border border-white/10 bg-haze p-6"
-          >
-            <p className="font-mono text-xs text-hot">{job.period}</p>
-            <h3 className="mt-2 font-display text-2xl font-black">{job.role}</h3>
-            <p className="text-dim">{job.company}</p>
-            {job.points.length > 0 && (
-              <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-dim">
-                {job.points.map((pt) => (
-                  <li key={pt}>{pt}</li>
-                ))}
-              </ul>
-            )}
-          </motion.div>
-        ))}
+      <div id="experience" className="mt-16 md:mt-20">
+        <p className="mb-5 text-xs font-semibold uppercase tracking-[0.18em] text-hot">Experience</p>
+        <div className="grid gap-4 md:grid-cols-2">
+          {experience.map((job) => (
+            <motion.div
+              key={job.role + job.company}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="rounded-2xl border border-white/[0.08] bg-haze p-6 transition-colors hover:border-hot/25 sm:p-8"
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-hot">{job.period}</p>
+              <h3 className="mt-3 font-display text-xl font-bold tracking-tight sm:text-2xl">{job.role}</h3>
+              <p className="mt-1 text-dim">{job.company}</p>
+              <p className="mt-4 max-w-md text-sm leading-relaxed text-dim">{job.summary}</p>
+              {job.points.length > 0 && (
+                <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-dim">
+                  {job.points.map((pt) => (
+                    <li key={pt}>{pt}</li>
+                  ))}
+                </ul>
+              )}
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

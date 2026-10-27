@@ -1,6 +1,6 @@
 import { profile } from "../data/content";
 
-const items = [profile.role, profile.company, profile.name];
+const items = ["Thoughtful digital experiences", "Full-stack development", profile.name];
 
 function Row({ reverse, className, textClass }) {
   // list is doubled so the -50% keyframe loops seamlessly
@@ -10,9 +10,9 @@ function Row({ reverse, className, textClass }) {
         {[...items, ...items].map((item, i) => (
           <span
             key={i}
-            className={`mx-6 whitespace-nowrap font-display text-4xl font-black sm:text-6xl ${textClass}`}
+            className={`mx-6 whitespace-nowrap font-display text-3xl font-bold tracking-tight sm:text-5xl lg:text-6xl ${textClass}`}
           >
-            {item} <span className="mx-6">✦</span>
+            {item} <span className="mx-6 text-void/50">✳</span>
           </span>
         ))}
       </div>
@@ -22,12 +22,12 @@ function Row({ reverse, className, textClass }) {
 
 export default function Marquee() {
   return (
-    <section aria-label={`Profile: ${items.join(", ")}`} className="-mx-4 my-10 overflow-hidden py-10">
-      <Row className="-rotate-2 bg-hot" textClass="text-void" />
+    <section aria-label={`Profile: ${items.join(", ")}`} className="my-12 overflow-hidden py-8 md:my-16">
+      <Row className="bg-hot py-5" textClass="text-void" />
       <Row
         reverse
-        className="rotate-1 border-y border-white/20"
-        textClass="text-transparent [-webkit-text-stroke:1.5px_var(--color-bone)]"
+        className="border-b border-white/10 py-5"
+        textClass="text-transparent [-webkit-text-stroke:1px_var(--color-dim)]"
       />
     </section>
   );
