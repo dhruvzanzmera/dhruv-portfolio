@@ -17,14 +17,17 @@ export default function FloatingActions() {
         </svg>
       </a>
       <a
-        href={`mailto:${profile.email}`}
-        className="flex items-center gap-2 rounded-full bg-hot px-5 py-3 text-sm font-semibold text-void shadow-lg shadow-black/20 transition-all hover:-translate-y-1 hover:brightness-105"
+        href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(profile.email)}`}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Email me"
+        title="Email me"
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-hot text-void shadow-lg shadow-black/20 transition-all hover:-translate-y-1 hover:brightness-105"
       >
-        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
           <rect x="3" y="5" width="18" height="14" rx="2" />
           <path d="m3 7 9 6 9-6" />
         </svg>
-        Contact
       </a>
     </aside>
   );
