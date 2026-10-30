@@ -1,4 +1,4 @@
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Float, MeshDistortMaterial } from "@react-three/drei";
 import { useRef } from "react";
 import { motion } from "motion/react";
@@ -11,15 +11,24 @@ const reduced =
 
 function Blob() {
   const ref = useRef();
+  const { viewport } = useThree();
   useFrame(({ pointer, clock }) => {
     ref.current.rotation.y = clock.elapsedTime * 0.15 + pointer.x * 0.8;
     ref.current.rotation.x = pointer.y * 0.5;
   });
   return (
-    <Float speed={2} floatIntensity={1.5}>
-      <mesh ref={ref} scale={2.2}>
-        <icosahedronGeometry args={[1, 14]} />
-        <MeshDistortMaterial color="#c9f06b" distort={0.5} speed={2} wireframe />
+    <Float speed={1.2} floatIntensity={0.45}>
+      <mesh ref={ref} position={[viewport.width * 0.19, 0.15, 0]} scale={1.7}>
+        <icosahedronGeometry args={[1, 7]} />
+        <MeshDistortMaterial
+          color="#c9f06b"
+          distort={0.32}
+          speed={1.2}
+          wireframe
+          transparent
+          opacity={0.3}
+          depthWrite={false}
+        />
       </mesh>
     </Float>
   );
@@ -32,7 +41,7 @@ export default function Hero() {
     <section id="home" className="relative flex min-h-[100svh] items-center overflow-hidden">
       <div className="hero-grid pointer-events-none absolute inset-0 opacity-70" />
       <div className="hero-glow pointer-events-none absolute inset-0" />
-      <div className="pointer-events-none absolute inset-0 opacity-75">
+      <div className="pointer-events-none absolute inset-0 opacity-60">
         <Canvas
           camera={{ position: [0, 0, 6], fov: 45 }}
           dpr={[1, 1.5]}
@@ -40,6 +49,8 @@ export default function Hero() {
           eventSource={document.getElementById("root")}
           eventPrefix="client"
         >
+          <ambientLight intensity={1.5} />
+          <pointLight position={[4, 3, 5]} intensity={2} color="#c9f06b" />
           <Blob />
         </Canvas>
       </div>
