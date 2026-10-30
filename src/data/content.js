@@ -2,6 +2,7 @@ import alexMorganPortfolioImage from "../assets/Alex Morgan Portfolio.png";
 import novaCartImage from "../assets/Nova Cart.png";
 import vertexSolutionsImage from "../assets/Vertex Solutions.png";
 import skyPulseImage from "../assets/SkyPulse Weather Dashboard.png";
+import auralisAiImage from "../assets/Auralis AI Chatbot.png";
 
 export const profile = {
   name: "Dhruv Zanzmera",
@@ -18,6 +19,28 @@ export const navLinks = [
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
+
+export const fullStackProject = {
+  title: "Auralis AI",
+  image: auralisAiImage,
+  liveUrl: "https://auralis-ai-chat-app-frontend.vercel.app/",
+  summary: "A full-stack AI chatbot with secure user accounts, saved conversations, and an admin dashboard for managing users and usage.",
+  tech: [
+    { category: "Frontend", items: ["React", "Vite", "Tailwind CSS"] },
+    { category: "Backend", items: ["Node.js", "Express.js"] },
+    { category: "Database", items: ["MongoDB", "Mongoose"] },
+    { category: "Authentication", items: ["JWT", "Cookies"] },
+    { category: "AI engine", items: ["Groq API"] },
+  ],
+  features: [
+    "User signup and login",
+    "AI chat conversations",
+    "Save chat history",
+    "Rename and delete chats",
+    "Admin dashboard",
+    "User management and usage tracking",
+  ],
+};
 
 export const projects = [
   {
