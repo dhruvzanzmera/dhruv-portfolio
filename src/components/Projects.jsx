@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import SectionHeading from "./SectionHeading";
-import { fullStackProject, projects } from "../data/content";
+import { frontendProjects, fullStackProjects, uiProjects } from "../data/content";
 
 function Card({ p, i }) {
   const ref = useRef(null);
@@ -78,65 +78,74 @@ function Card({ p, i }) {
 }
 
 export default function Projects() {
-  const project = fullStackProject;
-
   return (
     <>
       <section id="projects" className="mx-auto max-w-7xl px-5 pb-12 pt-20 md:pb-16 md:pt-32">
-        <SectionHeading title="Full-stack project" text="A product built across the frontend, backend, database, and AI." />
-        <article className="grid overflow-hidden rounded-2xl border border-white/[0.08] bg-haze md:grid-cols-[1.15fr_1fr]">
-          <img
-            src={project.image}
-            alt={`${project.title} application preview`}
-            loading="lazy"
-            className="h-full min-h-64 w-full object-cover object-top"
-          />
-          <div className="flex flex-col p-5 sm:p-8 lg:p-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-hot">Full-stack application</p>
-            <h3 className="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">{project.title}</h3>
-            <p className="mt-3 leading-relaxed text-dim">{project.summary}</p>
+        <SectionHeading title="Full-stack projects" text="Products built across the frontend, backend, database, and integrated services." />
+        <div className="grid auto-rows-fr items-stretch gap-5 md:grid-cols-2">
+          {fullStackProjects.map((project) => (
+            <article key={project.title} className="flex flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-haze">
+              <img
+                src={project.image}
+                alt={`${project.title} application preview`}
+                loading="lazy"
+                className="aspect-[1.65] w-full border-b border-white/[0.08] object-cover object-top"
+              />
+              <div className="flex flex-1 flex-col p-5 sm:p-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-hot">Full-stack application</p>
+                <h3 className="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">{project.title}</h3>
+                <p className="mt-3 leading-relaxed text-dim">{project.summary}</p>
 
-            <h4 className="mt-7 text-sm font-semibold uppercase tracking-[0.14em] text-bone">Technology</h4>
-            <dl className="mt-3 space-y-3">
-              {project.tech.map((group) => (
-                <div key={group.category} className="flex flex-wrap gap-x-3 gap-y-1">
-                  <dt className="text-sm font-medium text-dim">{group.category}:</dt>
-                  <dd className="flex flex-wrap gap-1.5">
-                    {group.items.map((item) => (
-                      <span key={item} className="rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-0.5 text-xs text-bone">
-                        {item}
-                      </span>
-                    ))}
-                  </dd>
-                </div>
-              ))}
-            </dl>
+                <h4 className="mt-7 text-sm font-semibold uppercase tracking-[0.14em] text-bone">Technology</h4>
+                <dl className="mt-3 space-y-3">
+                  {project.tech.map((group) => (
+                    <div key={group.category} className="flex flex-wrap gap-x-3 gap-y-1">
+                      <dt className="text-sm font-medium text-dim">{group.category}:</dt>
+                      <dd className="flex flex-wrap gap-1.5">
+                        {group.items.map((item) => (
+                          <span key={item} className="rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-0.5 text-xs text-bone">
+                            {item}
+                          </span>
+                        ))}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
 
-            <h4 className="mt-7 text-sm font-semibold uppercase tracking-[0.14em] text-bone">Key features</h4>
-            <ul className="mt-3 flex flex-wrap gap-2">
-              {project.features.map((feature) => (
-                <li key={feature} className="rounded-full border border-hot/20 bg-hot/[0.06] px-3 py-1 text-xs text-dim">
-                  {feature}
-                </li>
-              ))}
-            </ul>
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-7 inline-flex w-fit items-center gap-2 rounded-full bg-hot px-5 py-3 text-sm font-semibold text-void transition-transform hover:scale-[1.03]"
-            >
-              Visit live app
-              <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </article>
+                <h4 className="mt-7 text-sm font-semibold uppercase tracking-[0.14em] text-bone">Key features</h4>
+                <ul className="mt-3 flex flex-wrap gap-2">
+                  {project.features.map((feature) => (
+                    <li key={feature} className="rounded-full border border-hot/20 bg-hot/[0.06] px-3 py-1 text-xs text-dim">
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-auto inline-flex w-fit items-center gap-2 rounded-full bg-hot px-5 py-3 text-sm font-semibold text-void transition-transform hover:scale-[1.03] sm:mt-7"
+                >
+                  Visit live app
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-12 md:py-20">
+        <SectionHeading title="UI projects" text="Frontend prototypes and interfaces showcasing polished design and interactive experiences." />
+        <div className="grid auto-rows-fr items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:gap-5">
+          {uiProjects.map((p, i) => <Card key={p.title} p={p} i={i} />)}
+        </div>
       </section>
 
       <section id="frontend-projects" className="mx-auto max-w-7xl px-5 py-12 md:py-20">
         <SectionHeading title="Frontend projects" text="Selected concepts and frontend builds, each shaped around a clear idea and a considered experience." />
         <div className="grid auto-rows-fr items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-5">
-          {projects.map((p, i) => <Card key={p.title} p={p} i={i} />)}
+          {frontendProjects.map((p, i) => <Card key={p.title} p={p} i={i} />)}
         </div>
       </section>
     </>

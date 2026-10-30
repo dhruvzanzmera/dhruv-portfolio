@@ -3,6 +3,10 @@ import novaCartImage from "../assets/Nova Cart.png";
 import vertexSolutionsImage from "../assets/Vertex Solutions.png";
 import skyPulseImage from "../assets/SkyPulse Weather Dashboard.png";
 import auralisAiImage from "../assets/Auralis AI Chatbot.png";
+import formaImage from "../assets/Forma E-com Website.png";
+import nimbusImage from "../assets/Nimbus Admin Console.png";
+import emberImage from "../assets/Ember & root Restaurant.png";
+import orbitImage from "../assets/Orbit Chat App.png";
 
 export const profile = {
   name: "Dhruv Zanzmera",
@@ -20,29 +24,75 @@ export const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
-export const fullStackProject = {
-  title: "Auralis AI",
-  image: auralisAiImage,
-  liveUrl: "https://auralis-ai-chat-app-frontend.vercel.app/",
-  summary: "A full-stack AI chatbot with secure user accounts, saved conversations, and an admin dashboard for managing users and usage.",
-  tech: [
-    { category: "Frontend", items: ["React", "Vite", "Tailwind CSS"] },
-    { category: "Backend", items: ["Node.js", "Express.js"] },
-    { category: "Database", items: ["MongoDB", "Mongoose"] },
-    { category: "Authentication", items: ["JWT", "Cookies"] },
-    { category: "AI engine", items: ["Groq API"] },
-  ],
-  features: [
-    "User signup and login",
-    "AI chat conversations",
-    "Save chat history",
-    "Rename and delete chats",
-    "Admin dashboard",
-    "User management and usage tracking",
-  ],
-};
+export const fullStackProjects = [
+  {
+    title: "Auralis AI",
+    image: auralisAiImage,
+    liveUrl: "https://auralis-ai-chat-app-frontend.vercel.app/",
+    summary: "A full-stack AI chatbot with secure user accounts, saved conversations, and an admin dashboard for managing users and usage.",
+    tech: [
+      { category: "Frontend", items: ["React", "Vite", "Tailwind CSS"] },
+      { category: "Backend", items: ["Node.js", "Express.js"] },
+      { category: "Database", items: ["MongoDB", "Mongoose"] },
+      { category: "Authentication", items: ["JWT", "Cookies"] },
+      { category: "AI engine", items: ["Groq API"] },
+    ],
+    features: [
+      "User signup and login",
+      "AI chat conversations",
+      "Save chat history",
+      "Rename and delete chats",
+      "Admin dashboard",
+      "User management and usage tracking",
+    ],
+  },
+  {
+    title: "Forma Store",
+    image: formaImage,
+    liveUrl: "https://forma-frontend-six.vercel.app/",
+    summary: "A full-stack online store for discovering products, managing carts and addresses, and placing and tracking orders.",
+    tech: [
+      { category: "Frontend", items: ["React 19", "Vite", "Tailwind CSS", "React Router", "Axios"] },
+      { category: "Backend", items: ["Node.js", "Express.js", "REST API"] },
+      { category: "Database", items: ["MongoDB", "Mongoose"] },
+      { category: "Authentication", items: ["JWT"] },
+      { category: "Services", items: ["Cloudinary", "Nodemailer"] },
+    ],
+    features: [
+      "Browse and search products",
+      "Manage cart and addresses",
+      "Place and track orders",
+      "Admin product and category management",
+      "Customer and order management",
+    ],
+  },
+];
 
-export const projects = [
+export const uiProjects = [
+  {
+    title: "Nimbus Admin Console",
+    image: nimbusImage,
+    liveUrl: "https://nimbus-admin-dashboard-lime.vercel.app/",
+    summary: "A responsive admin dashboard prototype using mock data and client-side state, with reusable components for common management workflows.",
+    highlights: ["React 19", "Vite", "React Router", "Tailwind CSS", "Mock data; no backend"],
+  },
+  {
+    title: "Ember & Root Restaurant",
+    image: emberImage,
+    liveUrl: "https://ember-root-restaurant.vercel.app/",
+    summary: "A restaurant website for browsing a wood-fired dining menu and making simulated online orders and reservations.",
+    highlights: ["React 19", "Menu search and filters", "Cart and order flow", "Reservation modal", "Frontend-only interactions"],
+  },
+  {
+    title: "Orbit Chat App",
+    image: orbitImage,
+    liveUrl: "https://orbit-chat-frontend.vercel.app/",
+    summary: "A polished frontend-only chat app prototype with a responsive messaging dashboard and demo interactions powered by local state.",
+    highlights: ["React 19", "React Router", "Tailwind CSS", "Chat and search UI", "No API or database"],
+  },
+];
+
+export const frontendProjects = [
   {
     title: "SkyPulse",
     image: skyPulseImage,
