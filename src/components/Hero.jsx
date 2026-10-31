@@ -1,6 +1,6 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Float, MeshDistortMaterial } from "@react-three/drei";
-import { useRef } from "react";
+import { Component, useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import Magnetic from "./Magnetic";
 import { profile } from "../data/content";
@@ -8,6 +8,22 @@ import { profile } from "../data/content";
 const lines = ["DHRUV", "ZANZMERA", "FULL-STACK DEV."];
 const reduced =
   typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+class AnimationErrorBoundary extends Component {
+  state = { hasError: false };
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error) {
+    console.error("Hero animation failed to render; hiding it.", error);
+  }
+
+  render() {
+    return this.state.hasError ? null : this.props.children;
+  }
+}
 
 function Blob() {
   const ref = useRef();
@@ -36,23 +52,49 @@ function Blob() {
 
 export default function Hero() {
   let letterIndex = 0;
+  const [animationAvailable, setAnimationAvailable] = useState(true);
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const handleContextLost = (event) => {
+      event.preventDefault();
+      setAnimationAvailable(false);
+    };
+    const handleContextRestored = () => setAnimationAvailable(true);
+
+    canvas.addEventListener("webglcontextlost", handleContextLost);
+    canvas.addEventListener("webglcontextrestored", handleContextRestored);
+    return () => {
+      canvas.removeEventListener("webglcontextlost", handleContextLost);
+      canvas.removeEventListener("webglcontextrestored", handleContextRestored);
+    };
+  }, []);
 
   return (
     <section id="home" className="relative flex min-h-[100svh] items-center overflow-hidden">
       <div className="hero-grid pointer-events-none absolute inset-0 opacity-70" />
       <div className="hero-glow pointer-events-none absolute inset-0" />
-      <div className="pointer-events-none absolute inset-0 opacity-60">
-        <Canvas
-          camera={{ position: [0, 0, 6], fov: 45 }}
-          dpr={[1, 1.5]}
-          frameloop={reduced ? "demand" : "always"}
-          eventSource={document.getElementById("root")}
-          eventPrefix="client"
-        >
-          <ambientLight intensity={1.5} />
-          <pointLight position={[4, 3, 5]} intensity={2} color="#c9f06b" />
-          <Blob />
-        </Canvas>
+      <div
+        className={`pointer-events-none absolute inset-0 opacity-60 ${animationAvailable ? "" : "invisible"}`}
+      >
+        <AnimationErrorBoundary>
+          <Canvas
+            ref={canvasRef}
+            fallback={null}
+            camera={{ position: [0, 0, 6], fov: 45 }}
+            dpr={[1, 1.5]}
+            frameloop={reduced ? "demand" : "always"}
+            eventSource={document.getElementById("root")}
+            eventPrefix="client"
+          >
+            <ambientLight intensity={1.5} />
+            <pointLight position={[4, 3, 5]} intensity={2} color="#c9f06b" />
+            <Blob />
+          </Canvas>
+        </AnimationErrorBoundary>
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-16 pt-32">
