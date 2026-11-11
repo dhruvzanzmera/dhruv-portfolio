@@ -13,9 +13,9 @@ export default function Hero() {
       <div className="hero-glow pointer-events-none absolute inset-0" />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-16 pt-32">
-        <p className="mb-7 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-dim sm:text-sm">
-          <span className="h-px w-8 bg-hot" />
-          {profile.role} <span className="text-hot">/</span> {profile.company}
+        <p className="mb-7 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-muted sm:text-sm">
+          <span className="h-px w-8 bg-accent" />
+          {profile.role} <span className="text-accent">/</span> {profile.company}
         </p>
 
         <h1 aria-label={lines.join(" ")} className="font-display font-bold leading-[0.92] tracking-[-0.065em]">
@@ -23,7 +23,7 @@ export default function Hero() {
             <span
               key={line}
               aria-hidden="true"
-              className={`block overflow-hidden pb-1 ${line === "FULL-STACK DEV." ? "text-[clamp(1.7rem,8.5vw,7.8rem)] text-hot" : "text-[clamp(2.5rem,9.2vw,8.6rem)]"}`}
+              className={`block overflow-hidden pb-1 ${line === "FULL-STACK DEV." ? "text-[clamp(1.7rem,8.5vw,7.8rem)] text-accent" : "text-[clamp(2.5rem,9.2vw,8.6rem)]"}`}
             >
               {[...line].map((ch) => {
                 const i = letterIndex++;
@@ -47,7 +47,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2 }}
-          className="mt-7 max-w-lg text-base leading-relaxed text-dim sm:text-lg"
+          className="mt-7 max-w-lg text-base leading-relaxed text-muted sm:text-lg"
         >
           I build thoughtful web experiences, bringing frontend craft and full-stack thinking together from the first idea to the final detail.
         </motion.p>
@@ -59,7 +59,7 @@ export default function Hero() {
           className="mt-8 flex flex-wrap gap-3"
         >
           <Magnetic>
-            <a href="#projects" className="group flex items-center gap-3 rounded-full bg-hot px-6 py-3.5 font-semibold text-void transition-transform hover:scale-[1.03]">
+            <a href="#projects" className="group flex items-center gap-3 rounded-full border border-accent bg-accent px-6 py-3.5 font-semibold text-white shadow-sm shadow-blue-900/10 transition-transform hover:scale-[1.03]">
               Explore my work
               <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">↗</span>
             </a>
@@ -67,7 +67,7 @@ export default function Hero() {
           <Magnetic>
             <a
               href="#contact"
-              className="block rounded-full border border-white/20 px-6 py-3.5 font-semibold transition-colors hover:border-hot/60 hover:bg-white/5"
+              className="block rounded-full border border-line bg-surface px-6 py-3.5 font-semibold shadow-sm shadow-slate-900/5 transition-colors hover:border-accent/40 hover:bg-accent-soft"
             >
               Let&apos;s talk
             </a>

@@ -19,6 +19,7 @@ export const profile = {
 
 export const navLinks = [
   { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
@@ -204,7 +205,24 @@ export const processSteps = [
   },
 ];
 
-export const stack = [];
+export const stack = [
+  {
+    group: "Frontend",
+    items: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Vite", "React Router"],
+  },
+  {
+    group: "Backend & APIs",
+    items: ["Node.js", "Express.js", "REST APIs", "Axios", "Fetch API"],
+  },
+  {
+    group: "Data & services",
+    items: ["MongoDB", "Mongoose", "Nodemailer"],
+  },
+  {
+    group: "Authentication & integrations",
+    items: ["JWT"],
+  },
+];
 
 export const about = [
   "I’m Dhruv Zanzmera, a Senior Full-Stack Developer at PixerFect Solutions LLP.",
