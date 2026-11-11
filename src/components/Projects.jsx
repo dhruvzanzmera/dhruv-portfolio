@@ -3,6 +3,8 @@ import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import SectionHeading from "./SectionHeading";
 import { frontendProjects, fullStackProjects, uiProjects } from "../data/content";
 
+const allFrontendProjects = [...uiProjects, ...frontendProjects];
+
 function Card({ p, i }) {
   const ref = useRef(null);
   const mx = useMotionValue(0.5);
@@ -135,17 +137,10 @@ export default function Projects() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-12 md:py-20">
-        <SectionHeading title="UI projects" text="Frontend prototypes and interfaces showcasing polished design and interactive experiences." />
-        <div className="grid auto-rows-fr items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:gap-5">
-          {uiProjects.map((p, i) => <Card key={p.title} p={p} i={i} />)}
-        </div>
-      </section>
-
       <section id="frontend-projects" className="mx-auto max-w-7xl px-5 py-12 md:py-20">
-        <SectionHeading title="Frontend projects" text="Selected concepts and frontend builds, each shaped around a clear idea and a considered experience." />
+        <SectionHeading title="Frontend projects" text="A mix of React applications and HTML, CSS, and JavaScript builds, each shaped around a clear idea and a considered experience." />
         <div className="grid auto-rows-fr items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-5">
-          {frontendProjects.map((p, i) => <Card key={p.title} p={p} i={i} />)}
+          {allFrontendProjects.map((p, i) => <Card key={p.title} p={p} i={i} />)}
         </div>
       </section>
     </>

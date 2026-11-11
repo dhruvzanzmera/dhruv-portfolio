@@ -98,7 +98,7 @@ export const frontendProjects = [
     image: skyPulseImage,
     liveUrl: "https://skypulse-weather-dashboard.onrender.com/",
     summary: "A responsive weather dashboard with live forecasts, air-quality insights, and location-aware city search.",
-    highlights: ["Live weather & air quality", "City search", "Geolocation", "Responsive design"],
+    highlights: ["HTML5", "Live weather & air quality", "City search", "Geolocation", "Responsive design"],
     tech: [
       { category: "Structure", items: ["HTML5"] },
       { category: "Styling", items: ["CSS3", "Responsive layout"] },
@@ -113,7 +113,7 @@ export const frontendProjects = [
     image: alexMorganPortfolioImage,
     liveUrl: "https://alex-morgan-portfolio-one.vercel.app/",
     summary: "A motion-led portfolio concept that brings a developer’s work, experience, and services together in one polished experience.",
-    highlights: ["Responsive design", "GSAP", "ScrollTrigger", "Vanilla JavaScript"],
+    highlights: ["HTML5", "Responsive design", "GSAP", "ScrollTrigger", "Vanilla JavaScript"],
     tech: [
       { category: "Structure", items: ["HTML5"] },
       { category: "Styling", items: ["CSS3", "Tailwind CSS (via CDN)"] },
@@ -132,7 +132,7 @@ export const frontendProjects = [
     image: novaCartImage,
     liveUrl: "https://nova-cart-phi.vercel.app/",
     summary: "A bright storefront concept for home, tech, fitness, and lifestyle finds, with hands-on shopping interactions throughout.",
-    highlights: ["Product filters", "Cart & wishlist UI", "Responsive navigation", "Vanilla JavaScript"],
+    highlights: ["HTML5", "Product filters", "Cart & wishlist UI", "Responsive navigation", "Vanilla JavaScript"],
     tech: [
       { category: "Structure", items: ["HTML5"] },
       { category: "Styling", items: ["CSS3", "Tailwind CSS (via CDN)"] },
@@ -163,7 +163,7 @@ export const frontendProjects = [
     image: vertexSolutionsImage,
     liveUrl: "https://vertex-solutions-theta.vercel.app/",
     summary: "A confident company landing page concept presenting cloud engineering and enterprise software services with animated visual detail.",
-    highlights: ["Responsive layout", "CSS animations", "Service cards", "HTML & CSS"],
+    highlights: ["HTML5", "Responsive layout", "CSS animations", "Service cards"],
     tech: [
       { category: "Structure", items: ["HTML5"] },
       { category: "Styling", items: ["CSS3 (written inside the HTML file)"] },
