@@ -12,7 +12,7 @@ function Row({ reverse, className, textClass }) {
             key={i}
             className={`mx-6 whitespace-nowrap font-display text-3xl font-bold tracking-tight sm:text-5xl lg:text-6xl ${textClass}`}
           >
-            {item} <span className="mx-6 text-void/50">✳</span>
+            {item} <span className="mx-6 text-white/50">✳</span>
           </span>
         ))}
       </div>
@@ -23,11 +23,11 @@ function Row({ reverse, className, textClass }) {
 export default function Marquee() {
   return (
     <section aria-label={`Profile: ${items.join(", ")}`} className="my-12 overflow-hidden py-8 md:my-16">
-      <Row className="bg-hot py-5" textClass="text-void" />
+      <Row className="border-y border-accent bg-accent py-5" textClass="text-white" />
       <Row
         reverse
-        className="border-b border-white/10 py-5"
-        textClass="text-transparent [-webkit-text-stroke:1px_var(--color-dim)]"
+        className="border-b border-line py-5"
+        textClass="text-transparent [-webkit-text-stroke:1px_var(--color-muted)]"
       />
     </section>
   );

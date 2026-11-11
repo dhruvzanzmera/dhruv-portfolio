@@ -14,16 +14,16 @@ export default function Navbar() {
     >
       <nav
         aria-label="Main"
-        className="flex w-full max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-void/80 py-2 pl-5 pr-2 shadow-2xl shadow-black/10 backdrop-blur-xl sm:rounded-full sm:pl-6"
+        className="flex w-full max-w-7xl items-center justify-between rounded-2xl border border-line bg-surface/90 py-2 pl-5 pr-2 shadow-lg shadow-slate-900/5 backdrop-blur-xl sm:rounded-full sm:pl-6"
       >
         <a href="#home" className="flex items-center gap-3 font-display text-sm font-bold tracking-tight">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-hot text-xs text-void">D</span>
-          <span>{profile.name}<span className="text-hot">.</span></span>
+          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-xs text-white">D</span>
+          <span>{profile.name}<span className="text-accent">.</span></span>
         </a>
         <ul className="hidden items-center gap-6 md:flex">
           {navLinks.map((l) => (
             <li key={l.href}>
-              <a href={l.href} className="text-sm text-dim transition-colors hover:text-hot">
+              <a href={l.href} className="text-sm text-muted transition-colors hover:text-accent">
                 {l.label}
               </a>
             </li>
@@ -31,7 +31,7 @@ export default function Navbar() {
         </ul>
         <a
           href="#contact"
-          className="hidden rounded-full bg-hot px-5 py-2.5 text-sm font-semibold text-void transition-transform hover:scale-[1.03] md:block"
+          className="hidden rounded-full border border-accent bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-blue-900/10 transition-transform hover:scale-[1.03] md:block"
         >
           Let&apos;s talk
         </a>
@@ -41,7 +41,7 @@ export default function Navbar() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition-colors hover:bg-white/10 md:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-line bg-paper text-ink transition-colors hover:bg-accent-soft md:hidden"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
             <path d={open ? "M6 6l12 12M18 6L6 18" : "M4 8h16M4 16h16"} />
@@ -54,14 +54,14 @@ export default function Navbar() {
           id="mobile-menu"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mt-2 w-full max-w-7xl rounded-2xl border border-white/10 bg-void/95 p-3 backdrop-blur-xl md:hidden"
+          className="mt-2 w-full max-w-7xl rounded-2xl border border-line bg-surface p-3 shadow-lg shadow-slate-900/5 backdrop-blur-xl md:hidden"
         >
           {navLinks.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-xl px-4 py-3 font-medium text-dim transition-colors hover:bg-white/5 hover:text-hot"
+                className="block rounded-xl px-4 py-3 font-medium text-muted transition-colors hover:bg-accent-soft hover:text-accent"
               >
                 {l.label}
               </a>

@@ -8,14 +8,14 @@ export default function Process() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start 70%", "end 60%"] });
 
   return (
-    <section id="process" className="mx-auto max-w-7xl px-5 py-20 md:py-32">
+    <section id="process" className="mx-auto max-w-7xl border-t border-line px-5 py-20 md:py-32">
       <SectionHeading title="A considered process" text="Good work starts with clarity. Each step moves the idea closer to a useful, polished product." />
 
       <div ref={ref} className="relative max-w-3xl">
-        <div className="absolute bottom-0 left-[17px] top-0 w-px bg-white/10" />
+        <div className="absolute bottom-0 left-[17px] top-0 w-px bg-line" />
         <motion.div
           style={{ scaleY: scrollYProgress }}
-          className="absolute bottom-0 left-[17px] top-0 w-px origin-top bg-hot"
+          className="absolute bottom-0 left-[17px] top-0 w-px origin-top bg-accent"
         />
 
         <ol className="space-y-14">
@@ -28,11 +28,11 @@ export default function Process() {
               transition={{ duration: 0.6 }}
               className="relative pl-16 sm:pl-20"
             >
-              <span className="absolute left-0 top-0 flex h-9 w-9 items-center justify-center rounded-full border border-hot/40 bg-void font-display text-sm font-semibold text-hot">
+              <span className="absolute left-0 top-0 flex h-9 w-9 items-center justify-center rounded-full border border-accent/30 bg-surface font-display text-sm font-semibold text-accent shadow-sm">
                 {i + 1}
               </span>
               <h3 className="font-display text-xl font-bold tracking-tight sm:text-2xl">{s.title}</h3>
-              <p className="mt-2 max-w-lg leading-relaxed text-dim">{s.text}</p>
+              <p className="mt-2 max-w-lg leading-relaxed text-muted">{s.text}</p>
             </motion.li>
           ))}
         </ol>
