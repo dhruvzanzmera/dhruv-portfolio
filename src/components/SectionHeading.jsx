@@ -14,7 +14,7 @@ export default function SectionHeading({ title, text }) {
           {title}
         </motion.h2>
       </div>
-      {text && <p className="mt-4 max-w-xl leading-relaxed text-dim">{text}</p>}
+      {text && <p className="mt-4 max-w-xl leading-relaxed text-muted">{text}</p>}
     </div>
   );
 }
