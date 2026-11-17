@@ -9,7 +9,11 @@
     />
     <meta name="author" content="Dhruv Zanzmera" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#0c1512" />
+    <meta id="theme-color" name="theme-color" content="#0c1512" />
+    <script>
+      document.documentElement.dataset.theme =
+        localStorage.getItem("dhruvdev-theme") === "light" ? "light" : "dark";
+    </script>
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Dhruv Zanzmera | Full-Stack Developer Portfolio" />
     <meta

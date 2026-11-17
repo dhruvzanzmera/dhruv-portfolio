@@ -13,6 +13,20 @@
   --color-electric: #8eae72;
 }
 
+[data-theme="light"] {
+  color-scheme: light;
+  --color-void: #f7f8f3;
+  --color-haze: #ffffff;
+  --color-bone: #172019;
+  --color-dim: #566258;
+  --color-hot: #567b26;
+  --color-electric: #50743a;
+}
+
+:root {
+  color-scheme: dark;
+}
+
 html.lenis,
 html.lenis body {
   height: auto;
@@ -31,6 +45,7 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
 ::selection {
@@ -67,14 +82,14 @@ body::after {
 
 .hero-grid {
   background-image:
-    linear-gradient(to right, rgb(242 242 233 / 3%) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(242 242 233 / 3%) 1px, transparent 1px);
+    linear-gradient(to right, color-mix(in srgb, var(--color-bone) 3%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--color-bone) 3%, transparent) 1px, transparent 1px);
   background-size: 72px 72px;
   mask-image: linear-gradient(to bottom, black, transparent 85%);
 }
 
 .hero-glow {
-  background: radial-gradient(ellipse at 68% 46%, rgb(201 240 107 / 11%), transparent 48%);
+  background: radial-gradient(ellipse at 68% 46%, color-mix(in srgb, var(--color-hot) 11%, transparent), transparent 48%);
 }
 
 @keyframes marquee {

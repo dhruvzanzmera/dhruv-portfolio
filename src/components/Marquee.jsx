@@ -26,7 +26,7 @@ export default function Marquee() {
       <Row className="bg-hot py-5" textClass="text-void" />
       <Row
         reverse
-        className="border-b border-white/10 py-5"
+        className="border-b border-bone/10 py-5"
         textClass="text-transparent [-webkit-text-stroke:1px_var(--color-dim)]"
       />
     </section>

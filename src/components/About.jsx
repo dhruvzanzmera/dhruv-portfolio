@@ -36,7 +36,7 @@ export default function About() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="rounded-2xl border border-white/[0.08] bg-haze p-6 transition-colors hover:border-hot/25 sm:p-8"
+              className="rounded-2xl border border-bone/[0.08] bg-haze p-6 transition-colors hover:border-hot/25 sm:p-8"
             >
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-hot">{job.period}</p>
               <h3 className="mt-3 font-display text-xl font-bold tracking-tight sm:text-2xl">{job.role}</h3>

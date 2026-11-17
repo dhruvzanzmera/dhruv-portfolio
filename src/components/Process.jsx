@@ -12,7 +12,7 @@ export default function Process() {
       <SectionHeading title="A considered process" text="Good work starts with clarity. Each step moves the idea closer to a useful, polished product." />
 
       <div ref={ref} className="relative max-w-3xl">
-        <div className="absolute bottom-0 left-[17px] top-0 w-px bg-white/10" />
+        <div className="absolute bottom-0 left-[17px] top-0 w-px bg-bone/10" />
         <motion.div
           style={{ scaleY: scrollYProgress }}
           className="absolute bottom-0 left-[17px] top-0 w-px origin-top bg-hot"

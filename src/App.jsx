@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Lenis from "lenis";
 import { MotionConfig } from "motion/react";
 import Cursor from "./components/Cursor";
@@ -14,6 +14,19 @@ import Footer from "./components/Footer";
 import FloatingActions from "./components/FloatingActions";
 
 export default function App() {
+  const [theme, setTheme] = useState(() => (
+    window.localStorage.getItem("dhruvdev-theme") === "light" ? "light" : "dark"
+  ));
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    window.localStorage.setItem("dhruvdev-theme", theme);
+    document.getElementById("theme-color").setAttribute(
+      "content",
+      theme === "dark" ? "#0c1512" : "#f7f8f3",
+    );
+  }, [theme]);
+
   // smooth inertia scrolling (skipped when the visitor prefers reduced motion)
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -34,7 +47,9 @@ export default function App() {
     <MotionConfig reducedMotion="user">
       <Cursor />
       <ScrollBar />
-      <Navbar />
+      <Navbar theme={theme} onToggleTheme={() => setTheme((current) => (
+        current === "dark" ? "light" : "dark"
+      ))} />
       <main>
         <Hero />
         <Marquee />
