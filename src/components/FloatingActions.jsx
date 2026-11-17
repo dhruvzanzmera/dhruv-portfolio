@@ -10,7 +10,7 @@ export default function FloatingActions() {
         href="#home"
         aria-label="Go to top"
         title="Go to top"
-        className="flex h-12 w-12 items-center justify-center rounded-full border border-line bg-surface text-ink shadow-lg shadow-slate-900/10 transition-all hover:-translate-y-1 hover:border-accent/40 hover:text-accent"
+        className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-haze text-bone shadow-lg shadow-black/20 transition-all hover:-translate-y-1 hover:border-hot/50 hover:text-hot"
       >
         <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 19V5M5 12l7-7 7 7" />

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { navLinks, profile } from "../data/content";
 
-export default function Navbar() {
+export default function Navbar({ theme, onToggleTheme }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -14,7 +14,7 @@ export default function Navbar() {
     >
       <nav
         aria-label="Main"
-        className="flex w-full max-w-7xl items-center justify-between rounded-2xl border border-line bg-surface/90 py-2 pl-5 pr-2 shadow-lg shadow-slate-900/5 backdrop-blur-xl sm:rounded-full sm:pl-6"
+        className="flex w-full max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-void/80 py-2 pl-5 pr-2 shadow-2xl shadow-black/10 backdrop-blur-xl sm:rounded-full sm:pl-6"
       >
         <a href="#home" className="flex items-center gap-3 font-display text-sm font-bold tracking-tight">
           <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-xs text-white">D</span>
@@ -37,11 +37,30 @@ export default function Navbar() {
         </a>
         <button
           type="button"
+          aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+          aria-pressed={theme === "light"}
+          title={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+          onClick={onToggleTheme}
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-bone/5 text-bone transition-colors hover:bg-bone/10"
+        >
+          {theme === "dark" ? (
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" />
+            </svg>
+          ) : (
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z" />
+            </svg>
+          )}
+        </button>
+        <button
+          type="button"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           aria-controls="mobile-menu"
           onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-line bg-paper text-ink transition-colors hover:bg-accent-soft md:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition-colors hover:bg-white/10 md:hidden"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
             <path d={open ? "M6 6l12 12M18 6L6 18" : "M4 8h16M4 16h16"} />
@@ -54,14 +73,14 @@ export default function Navbar() {
           id="mobile-menu"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mt-2 w-full max-w-7xl rounded-2xl border border-line bg-surface p-3 shadow-lg shadow-slate-900/5 backdrop-blur-xl md:hidden"
+          className="mt-2 w-full max-w-7xl rounded-2xl border border-white/10 bg-void/95 p-3 backdrop-blur-xl md:hidden"
         >
           {navLinks.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-xl px-4 py-3 font-medium text-muted transition-colors hover:bg-accent-soft hover:text-accent"
+                className="block rounded-xl px-4 py-3 font-medium text-dim transition-colors hover:bg-white/5 hover:text-hot"
               >
                 {l.label}
               </a>

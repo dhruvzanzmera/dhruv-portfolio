@@ -67,7 +67,7 @@ export default function Hero() {
           <Magnetic>
             <a
               href="#contact"
-              className="block rounded-full border border-line bg-surface px-6 py-3.5 font-semibold shadow-sm shadow-slate-900/5 transition-colors hover:border-accent/40 hover:bg-accent-soft"
+              className="block rounded-full border border-white/20 px-6 py-3.5 font-semibold transition-colors hover:border-hot/60 hover:bg-white/5"
             >
               Let&apos;s talk
             </a>

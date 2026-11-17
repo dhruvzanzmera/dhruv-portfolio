@@ -3,7 +3,7 @@ import Magnetic from "./Magnetic";
 import { profile } from "../data/content";
 
 const field =
-  "w-full rounded-lg border border-line bg-surface px-4 py-3 text-base text-ink placeholder:text-muted focus:border-accent focus-visible:outline-none sm:text-lg";
+  "w-full border-b border-white/15 bg-transparent py-3 text-base text-bone placeholder:text-dim focus:border-hot focus-visible:outline-none sm:text-lg";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -30,7 +30,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="border-y border-line bg-paper">
+    <section id="contact" className="border-y border-white/[0.08] bg-haze">
       <div className="mx-auto max-w-7xl px-5 py-20 md:py-32">
         <p className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-surface px-3 py-1 text-sm font-medium text-accent">
           <span className="h-2 w-2 rounded-full bg-accent motion-safe:animate-pulse" />
@@ -72,8 +72,8 @@ export default function Contact() {
             )}
           </ul>
 
-          <form onSubmit={onSubmit} className="space-y-6 text-ink">
-            <div className="rounded-2xl border border-line bg-surface p-6 shadow-sm shadow-slate-900/5 sm:p-8">
+          <form onSubmit={onSubmit} className="space-y-6 text-bone">
+            <div className="rounded-2xl border border-white/[0.08] bg-void p-6 sm:p-8">
               <label htmlFor="name" className="sr-only">Name</label>
               <input id="name" name="name" required placeholder="Your name" value={form.name} onChange={onChange} className={field} />
               <label htmlFor="email" className="sr-only">Email</label>

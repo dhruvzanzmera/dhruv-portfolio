@@ -26,8 +26,8 @@ export default function Marquee() {
       <Row className="border-y border-accent bg-accent py-5" textClass="text-white" />
       <Row
         reverse
-        className="border-b border-line py-5"
-        textClass="text-transparent [-webkit-text-stroke:1px_var(--color-muted)]"
+        className="border-b border-white/10 py-5"
+        textClass="text-transparent [-webkit-text-stroke:1px_var(--color-dim)]"
       />
     </section>
   );
