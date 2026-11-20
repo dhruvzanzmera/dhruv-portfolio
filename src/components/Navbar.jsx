@@ -17,7 +17,7 @@ export default function Navbar({ theme, onToggleTheme }) {
         className="flex w-full max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-void/80 py-2 pl-5 pr-2 shadow-2xl shadow-black/10 backdrop-blur-xl sm:rounded-full sm:pl-6"
       >
         <a href="#home" className="flex items-center gap-3 font-display text-sm font-bold tracking-tight">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-xs text-white">D</span>
+          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-xs text-void">D</span>
           <span>{profile.name}<span className="text-accent">.</span></span>
         </a>
         <ul className="hidden items-center gap-6 md:flex">
@@ -31,7 +31,7 @@ export default function Navbar({ theme, onToggleTheme }) {
         </ul>
         <a
           href="#contact"
-          className="hidden rounded-full border border-accent bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-blue-900/10 transition-transform hover:scale-[1.03] md:block"
+          className="hidden rounded-full border border-accent bg-accent px-5 py-2.5 text-sm font-semibold text-void shadow-sm shadow-blue-900/10 transition-transform hover:scale-[1.03] md:block"
         >
           Let&apos;s talk
         </a>

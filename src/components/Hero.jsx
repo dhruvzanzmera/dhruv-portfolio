@@ -59,7 +59,7 @@ export default function Hero() {
           className="mt-8 flex flex-wrap gap-3"
         >
           <Magnetic>
-            <a href="#projects" className="group flex items-center gap-3 rounded-full border border-accent bg-accent px-6 py-3.5 font-semibold text-white shadow-sm shadow-blue-900/10 transition-transform hover:scale-[1.03]">
+            <a href="#projects" className="group flex items-center gap-3 rounded-full border border-accent bg-accent px-6 py-3.5 font-semibold text-void shadow-sm shadow-blue-900/10 transition-transform hover:scale-[1.03]">
               Explore my work
               <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">↗</span>
             </a>

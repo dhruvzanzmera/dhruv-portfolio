@@ -86,7 +86,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={status === "sending"}
-                    className="rounded-full border border-accent bg-accent px-6 py-3.5 font-semibold text-white shadow-sm shadow-blue-900/10 transition-transform hover:scale-[1.03] disabled:opacity-60"
+                    className="rounded-full border border-accent bg-accent px-6 py-3.5 font-semibold text-void shadow-sm shadow-blue-900/10 transition-transform hover:scale-[1.03] disabled:opacity-60"
                   >
                     {status === "sending" ? "Sending..." : "Send an inquiry"}
                   </button>
