@@ -1,7 +1,7 @@
-import alexMorganPortfolioImage from "../assets/Alex Morgan Portfolio.png";
+import alexMorganPortfolioImage from "../assets/Alex Morgan Portfolio Showcase.png";
 import novaCartImage from "../assets/Nova Cart.png";
 import vertexSolutionsImage from "../assets/Vertex Solutions.png";
-import skyPulseImage from "../assets/SkyPulse Weather Dashboard.png";
+import skyPulseImage from "../assets/SkyPulse Weather Companion Dashboard.png";
 import auralisAiImage from "../assets/Auralis AI Chatbot.png";
 import formaImage from "../assets/Forma E-com Website.png";
 import nimbusImage from "../assets/Nimbus Admin Dashboard Showcase.png";
