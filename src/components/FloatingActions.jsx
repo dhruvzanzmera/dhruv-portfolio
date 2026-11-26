@@ -21,7 +21,7 @@ export default function FloatingActions() {
         target="_blank"
         rel="noreferrer"
         aria-label="Email me"
-        title="Email me"
+        title={`Email ${profile.email}`}
         className="flex h-12 w-12 items-center justify-center rounded-full border border-accent bg-accent text-void shadow-lg shadow-blue-900/15 transition-all hover:-translate-y-1 hover:brightness-105"
       >
         <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">

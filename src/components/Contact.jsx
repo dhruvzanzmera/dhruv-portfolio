@@ -1,34 +1,8 @@
-import { useState } from "react";
-import Magnetic from "./Magnetic";
 import { profile } from "../data/content";
 
-const field =
-  "w-full border-b border-white/15 bg-transparent py-3 text-base text-bone placeholder:text-dim focus:border-hot focus-visible:outline-none sm:text-lg";
+const emailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(profile.email)}`;
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
-
-  const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
-
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("sending");
-    try {
-      // Your Express server should accept POST /api/contact. Set VITE_API_URL in .env
-      const res = await fetch(`${import.meta.env.VITE_API_URL ?? ""}/api/contact`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (!res.ok) throw new Error("Request failed");
-      setForm({ name: "", email: "", message: "" });
-      setStatus("sent");
-    } catch {
-      setStatus("error");
-    }
-  };
-
   return (
     <section id="contact" className="border-y border-white/[0.08] bg-haze">
       <div className="mx-auto max-w-7xl px-5 py-20 md:py-32">
@@ -40,64 +14,57 @@ export default function Contact() {
         <h2 className="mt-6 max-w-5xl font-display text-[clamp(2.8rem,9vw,8rem)] font-bold leading-[0.95] tracking-[-0.06em]">
           LET&apos;S BUILD <span className="text-accent">WHAT&apos;S NEXT.</span>
         </h2>
-        <p className="mt-6 max-w-xl leading-relaxed text-muted">
-          Have an idea taking shape? Share a little about it, and let&apos;s start a conversation.
-        </p>
 
-        <div className="mt-12 grid gap-12 lg:grid-cols-2">
-          <ul className="space-y-4 text-lg font-medium sm:text-xl">
-            {profile.email && (
-              <li>
-                <a href={`mailto:${profile.email}`} className="transition-colors hover:text-accent">
-                  {profile.email}
-                </a>
-              </li>
+        <div className="mt-12 grid gap-8 lg:grid-cols-2 lg:items-center">
+          <div>
+            <p className="max-w-xl leading-relaxed text-muted">
+              Have an idea taking shape? Send me an email and let&apos;s start a conversation.
+            </p>
+            {(profile.linkedin || profile.github) && (
+              <ul className="mt-6 flex flex-wrap gap-5 text-sm font-medium text-muted">
+                {profile.linkedin && (
+                  <li>
+                    <a href={profile.linkedin} target="_blank" rel="noreferrer" className="transition-colors hover:text-accent">
+                      LinkedIn <span aria-hidden="true">↗</span>
+                    </a>
+                  </li>
+                )}
+                {profile.github && (
+                  <li>
+                    <a href={profile.github} target="_blank" rel="noreferrer" className="transition-colors hover:text-accent">
+                      GitHub <span aria-hidden="true">↗</span>
+                    </a>
+                  </li>
+                )}
+              </ul>
             )}
-            {profile.linkedin && (
-              <li>
-                <a href={profile.linkedin} target="_blank" rel="noreferrer" className="transition-colors hover:text-accent">
-                  LinkedIn <span aria-hidden="true">↗</span>
-                </a>
-              </li>
-            )}
-            {profile.github && (
-              <li>
-                <a href={profile.github} target="_blank" rel="noreferrer" className="transition-colors hover:text-accent">
-                  GitHub <span aria-hidden="true">↗</span>
-                </a>
-              </li>
-            )}
-            {!profile.email && !profile.linkedin && !profile.github && (
-              <li className="max-w-sm text-base font-normal leading-relaxed text-muted">Use the form to share a project, opportunity, or question.</li>
-            )}
-          </ul>
+          </div>
 
-          <form onSubmit={onSubmit} className="space-y-6 text-bone">
-            <div className="rounded-2xl border border-white/[0.08] bg-void p-6 sm:p-8">
-              <label htmlFor="name" className="sr-only">Name</label>
-              <input id="name" name="name" required placeholder="Your name" value={form.name} onChange={onChange} className={field} />
-              <label htmlFor="email" className="sr-only">Email</label>
-              <input id="email" name="email" type="email" required placeholder="Your email address" value={form.email} onChange={onChange} className={`${field} mt-4`} />
-              <label htmlFor="message" className="sr-only">Message</label>
-              <textarea id="message" name="message" rows={4} required placeholder="Tell me a little about what you have in mind..." value={form.message} onChange={onChange} className={`${field} mt-4`} />
-
-              <div className="mt-6">
-                <Magnetic>
-                  <button
-                    type="submit"
-                    disabled={status === "sending"}
-                    className="rounded-full border border-accent bg-accent px-6 py-3.5 font-semibold text-void shadow-sm shadow-blue-900/10 transition-transform hover:scale-[1.03] disabled:opacity-60"
-                  >
-                    {status === "sending" ? "Sending..." : "Send an inquiry"}
-                  </button>
-                </Magnetic>
+          {profile.email && (
+            <div className="rounded-3xl border border-white/[0.08] bg-void p-6 sm:p-8">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-void">
+                <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="m3 7 9 6 9-6" />
+                </svg>
               </div>
-              <p role="status" className="mt-4 min-h-6 text-sm">
-                {status === "sent" && "Your message has been received. Thank you for reaching out."}
-                {status === "error" && "Your message could not be sent. Please check your connection and try again."}
-              </p>
+              <p className="mt-5 text-xs font-semibold uppercase tracking-[0.16em] text-accent">Start a conversation</p>
+              <a
+                href={emailComposeUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Email ${profile.name} at ${profile.email}`}
+                className="group mt-3 flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4 transition-colors hover:border-accent/40 hover:bg-accent/[0.06] sm:p-5"
+              >
+                <span className="min-w-0">
+                  <span className="block font-display text-xl font-bold text-ink sm:text-2xl">Email me</span>
+                  <span className="mt-1 block break-all text-sm text-muted">{profile.email}</span>
+                </span>
+                <span aria-hidden="true" className="shrink-0 text-2xl text-accent transition-transform group-hover:translate-x-1">↗</span>
+              </a>
+              <p className="mt-4 text-sm leading-relaxed text-muted">Opens a new Gmail compose window addressed to me.</p>
             </div>
-          </form>
+          )}
         </div>
       </div>
     </section>
