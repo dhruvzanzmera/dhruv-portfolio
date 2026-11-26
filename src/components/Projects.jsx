@@ -48,12 +48,12 @@ function ProjectCard({ project, category, i }) {
       />
 
       <div className="relative flex flex-1 flex-col">
-        <div className="relative overflow-hidden rounded-xl border border-white/10">
+        <div className="relative aspect-video overflow-hidden rounded-xl border border-white/10 bg-surface">
           <img
             src={project.image}
             alt={`${project.title} project preview`}
             loading="lazy"
-            className="aspect-[1.65] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
           />
           <span className="absolute left-3 top-3 rounded-full border border-white/15 bg-void/75 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-bone backdrop-blur-md">
             {category}
@@ -120,7 +120,7 @@ function ProjectCard({ project, category, i }) {
 
 function ProjectGrid({ projects, category }) {
   return (
-    <div className="grid auto-rows-fr items-stretch gap-5 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid auto-rows-fr items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {projects.map((project, i) => (
         <ProjectCard key={project.title} project={project} category={category} i={i} />
       ))}
@@ -133,11 +133,7 @@ export default function Projects() {
     <>
       <section id="projects" className="mx-auto max-w-7xl border-t border-line px-5 pb-12 pt-20 md:pb-16 md:pt-32">
         <SectionHeading title="Full-stack projects" text="Products built across the frontend, backend, database, and integrated services." />
-        <div className="grid auto-rows-fr items-stretch gap-5 md:grid-cols-2">
-          {fullStackProjects.map((project, i) => (
-            <ProjectCard key={project.title} project={project} category="Full-stack application" i={i} />
-          ))}
-        </div>
+        <ProjectGrid projects={fullStackProjects} category="Full-stack application" />
       </section>
 
       <section id="frontend-projects" className="mx-auto max-w-7xl border-t border-line px-5 py-12 md:py-20">

@@ -8,7 +8,7 @@ export default function Process() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start 70%", "end 60%"] });
 
   return (
-    <section id="process" className="mx-auto max-w-7xl border-t border-line px-5 py-20 md:py-32">
+    <section id="process" className="mx-auto max-w-7xl overflow-x-clip border-t border-line px-5 py-20 md:py-32">
       <SectionHeading title="A considered process" text="Good work starts with clarity. Each step moves the idea closer to a useful, polished product." />
 
       <div ref={ref} className="relative max-w-3xl">
