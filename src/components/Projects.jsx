@@ -60,7 +60,7 @@ function ProjectCard({ project, category, i }) {
           </span>
         </div>
         <div className="mt-4 flex items-center gap-3">
-          <h3 className="font-display text-[clamp(1.05rem,1.3vw,1.5rem)] font-bold leading-tight tracking-tight">{project.title}</h3>
+          <h3 className="font-display text-[clamp(1rem,1.15vw,1.25rem)] font-bold leading-tight tracking-tight">{project.title}</h3>
           <a
             href={project.liveUrl}
             target="_blank"
@@ -71,7 +71,7 @@ function ProjectCard({ project, category, i }) {
             <span aria-hidden="true">↗</span>
           </a>
         </div>
-        <p className="mt-2 line-clamp-3 text-[clamp(0.85rem,0.9vw,1rem)] leading-relaxed text-dim">{project.summary}</p>
+        <p className="mt-2 line-clamp-3 text-[clamp(0.85rem,0.85vw,0.95rem)] leading-relaxed text-dim">{project.summary}</p>
         <ul aria-label={`${project.title} highlights`} className="mt-auto flex flex-wrap gap-1.5 pt-4">
           {highlights.map((highlight) => (
             <li

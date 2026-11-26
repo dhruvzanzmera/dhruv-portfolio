@@ -10,7 +10,7 @@ function Row({ reverse, className, textClass }) {
         {[...items, ...items].map((item, i) => (
           <span
             key={i}
-            className={`mx-6 whitespace-nowrap font-display text-3xl font-bold tracking-tight sm:text-5xl lg:text-6xl ${textClass}`}
+            className={`mx-6 whitespace-nowrap font-display text-2xl font-bold tracking-tight sm:text-4xl lg:text-5xl ${textClass}`}
           >
             {item} <span className="mx-6 text-void/50">✳</span>
           </span>

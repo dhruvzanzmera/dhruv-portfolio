@@ -23,7 +23,7 @@ export default function Hero() {
             <span
               key={line}
               aria-hidden="true"
-              className={`block overflow-hidden pb-1 ${line === "FULL-STACK DEV." ? "text-[clamp(1.7rem,8.5vw,7.8rem)] text-accent" : "text-[clamp(2.5rem,9.2vw,8.6rem)]"}`}
+              className={`block overflow-hidden pb-1 ${line === "FULL-STACK DEV." ? "text-[clamp(1.5rem,5.4vw,5rem)] text-accent" : "text-[clamp(2.25rem,7.5vw,7rem)]"}`}
             >
               {[...line].map((ch) => {
                 const i = letterIndex++;

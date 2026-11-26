@@ -11,7 +11,7 @@ export default function Contact() {
           Let&apos;s connect
         </p>
 
-        <h2 className="mt-6 max-w-5xl font-display text-[clamp(2.8rem,9vw,8rem)] font-bold leading-[0.95] tracking-[-0.06em]">
+        <h2 className="mt-6 max-w-5xl font-display text-[clamp(2.5rem,7vw,6rem)] font-bold leading-[0.95] tracking-[-0.06em]">
           LET&apos;S BUILD <span className="text-accent">WHAT&apos;S NEXT.</span>
         </h2>
 
@@ -57,7 +57,7 @@ export default function Contact() {
                 className="group mt-3 flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4 transition-colors hover:border-accent/40 hover:bg-accent/[0.06] sm:p-5"
               >
                 <span className="min-w-0">
-                  <span className="block font-display text-xl font-bold text-ink sm:text-2xl">Email me</span>
+                  <span className="block font-display text-lg font-bold text-ink sm:text-xl">Email me</span>
                   <span className="mt-1 block break-all text-sm text-muted">{profile.email}</span>
                 </span>
                 <span aria-hidden="true" className="shrink-0 text-2xl text-accent transition-transform group-hover:translate-x-1">↗</span>

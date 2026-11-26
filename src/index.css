@@ -44,7 +44,7 @@ html.lenis body {
 }
 
 html {
-  font-size: clamp(100%, calc(100% + 0.125vw), 112.5%);
+  font-size: 100%;
   scroll-padding-top: 6rem;
 }
 

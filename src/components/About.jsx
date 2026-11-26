@@ -21,7 +21,7 @@ export default function About() {
     <section id="about" className="mx-auto max-w-7xl border-t border-line px-5 py-20 md:py-32">
       <SectionHeading title="Behind the build" />
 
-      <p ref={ref} className="max-w-5xl font-display text-xl font-medium leading-[1.4] tracking-tight sm:text-3xl lg:text-4xl">
+      <p ref={ref} className="max-w-5xl font-display text-lg font-medium leading-[1.4] tracking-tight sm:text-2xl lg:text-3xl">
         {words.map((w, i) => (
           <Word key={i} word={w} progress={scrollYProgress} range={[i / words.length, (i + 1) / words.length]} />
         ))}
@@ -39,7 +39,7 @@ export default function About() {
               className="rounded-2xl border border-white/[0.08] bg-haze p-6 transition-colors hover:border-hot/25 sm:p-8"
             >
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">{job.period}</p>
-              <h3 className="mt-3 font-display text-xl font-bold tracking-tight sm:text-2xl">{job.role}</h3>
+              <h3 className="mt-3 font-display text-lg font-bold tracking-tight sm:text-xl">{job.role}</h3>
               <p className="mt-1 text-muted">{job.company}</p>
               <p className="mt-4 max-w-md text-sm leading-relaxed text-muted">{job.summary}</p>
               {job.points.length > 0 && (

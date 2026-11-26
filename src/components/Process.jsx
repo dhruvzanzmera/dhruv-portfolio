@@ -31,7 +31,7 @@ export default function Process() {
               <span className="absolute left-0 top-0 flex h-9 w-9 items-center justify-center rounded-full border border-accent/30 bg-surface font-display text-sm font-semibold text-accent shadow-sm">
                 {i + 1}
               </span>
-              <h3 className="font-display text-xl font-bold tracking-tight sm:text-2xl">{s.title}</h3>
+              <h3 className="font-display text-lg font-bold tracking-tight sm:text-xl">{s.title}</h3>
               <p className="mt-2 max-w-lg leading-relaxed text-muted">{s.text}</p>
             </motion.li>
           ))}

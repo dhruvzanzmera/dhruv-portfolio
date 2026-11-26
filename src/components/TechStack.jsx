@@ -12,7 +12,7 @@ export default function TechStack() {
       <div className="grid gap-4 sm:grid-cols-2">
         {stack.map((g) => (
           <div key={g.group} className="rounded-2xl border border-line bg-surface p-6 shadow-sm shadow-slate-900/5 sm:p-8">
-            <h3 className="font-display text-lg font-semibold">{g.group}</h3>
+            <h3 className="font-display text-base font-semibold">{g.group}</h3>
             <ul className="mt-5 flex flex-wrap gap-2">
               {g.items.map((item) => (
                 <li
