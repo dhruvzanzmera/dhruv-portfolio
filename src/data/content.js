@@ -2,8 +2,8 @@ import alexMorganPortfolioImage from "../assets/Alex Morgan Portfolio Showcase.p
 import novaCartImage from "../assets/Nova Cart_ Everyday Finds, Better Priced.png";
 import vertexSolutionsImage from "../assets/Vertex_ Mission-Critical Systems.png";
 import skyPulseImage from "../assets/SkyPulse Weather Companion Dashboard.png";
-import auralisAiImage from "../assets/Auralis AI Chatbot.png";
-import formaImage from "../assets/Forma E-com Website.png";
+import auralisAiImage from "../assets/Auralis AI Assistant Dashboard.png";
+import formaImage from "../assets/FORMA_ A Modern E-commerce Experience.png";
 import nimbusImage from "../assets/Nimbus Admin Dashboard Showcase.png";
 import emberImage from "../assets/Ember & Root Restaurant Showcase.png";
 import orbitImage from "../assets/Orbit AI_ Your Smart Chat Companion.png";
