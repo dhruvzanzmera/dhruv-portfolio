@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import SectionHeading from "./SectionHeading";
 import { frontendProjects, fullStackProjects, uiProjects } from "../data/content";
@@ -129,17 +129,90 @@ function ProjectGrid({ projects, category }) {
 }
 
 export default function Projects() {
-  return (
-    <>
-      <section id="projects" className="mx-auto max-w-7xl border-t border-line px-5 pb-12 pt-20 md:pb-16 md:pt-32">
-        <SectionHeading title="Full-stack projects" text="Products built across the frontend, backend, database, and integrated services." />
-        <ProjectGrid projects={fullStackProjects} category="Full-stack application" />
-      </section>
+  const [activeTab, setActiveTab] = useState("full-stack");
+  const isFullStack = activeTab === "full-stack";
 
-      <section id="frontend-projects" className="mx-auto max-w-7xl border-t border-line px-5 py-12 md:py-20">
-        <SectionHeading title="Frontend projects" text="A mix of React applications and HTML, CSS, and JavaScript builds, each shaped around a clear idea and a considered experience." />
-        <ProjectGrid projects={allFrontendProjects} category="Frontend project" />
-      </section>
-    </>
+  const handleTabKeyDown = (event) => {
+    const tabs = Array.from(event.currentTarget.parentElement.querySelectorAll('[role="tab"]'));
+    const currentIndex = tabs.indexOf(event.currentTarget);
+    let nextIndex;
+
+    switch (event.key) {
+      case "ArrowRight":
+        nextIndex = (currentIndex + 1) % tabs.length;
+        break;
+      case "ArrowLeft":
+        nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+        break;
+      case "Home":
+        nextIndex = 0;
+        break;
+      case "End":
+        nextIndex = tabs.length - 1;
+        break;
+      default:
+        return;
+    }
+
+    event.preventDefault();
+    tabs[nextIndex].focus();
+    tabs[nextIndex].click();
+  };
+
+  return (
+    <section id="projects" className="mx-auto max-w-7xl border-t border-line px-5 pb-12 pt-20 md:pb-16 md:pt-32">
+      <SectionHeading
+        title={isFullStack ? "Full-stack projects" : "Frontend projects"}
+        text={isFullStack
+          ? "Products built across the frontend, backend, database, and integrated services."
+          : "A mix of React applications and HTML, CSS, and JavaScript builds, each shaped around a clear idea and a considered experience."}
+      />
+      <div
+        role="tablist"
+        aria-label="Project categories"
+        className="mb-8 flex w-fit gap-2 rounded-full border border-line bg-surface p-1.5"
+      >
+        <button
+          id="full-stack-tab"
+          type="button"
+          role="tab"
+          aria-selected={isFullStack}
+          aria-controls="project-tabpanel"
+          tabIndex={isFullStack ? 0 : -1}
+          onClick={() => setActiveTab("full-stack")}
+          onKeyDown={handleTabKeyDown}
+          className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-colors ${
+            isFullStack ? "bg-hot text-void" : "text-muted hover:text-ink"
+          }`}
+        >
+          Full-stack
+        </button>
+        <button
+          id="frontend-tab"
+          type="button"
+          role="tab"
+          aria-selected={!isFullStack}
+          aria-controls="project-tabpanel"
+          tabIndex={isFullStack ? -1 : 0}
+          onClick={() => setActiveTab("frontend")}
+          onKeyDown={handleTabKeyDown}
+          className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-colors ${
+            !isFullStack ? "bg-hot text-void" : "text-muted hover:text-ink"
+          }`}
+        >
+          Frontend
+        </button>
+      </div>
+      <div
+        id="project-tabpanel"
+        role="tabpanel"
+        aria-labelledby={isFullStack ? "full-stack-tab" : "frontend-tab"}
+        tabIndex={0}
+      >
+        {isFullStack
+          ? <ProjectGrid projects={fullStackProjects} category="Full-stack application" />
+          : <ProjectGrid projects={allFrontendProjects} category="Frontend project" />}
+      </div>
+    </section>
   );
 }

@@ -8,6 +8,7 @@
   --color-muted: #aab8ae;
   --color-accent: #c9f06b;
   --color-accent-soft: #202b1a;
+  --color-selection-text: #0c1512;
   --color-line: #29372f;
   --color-void: #0c1512;
   --color-haze: #121e19;
@@ -25,6 +26,7 @@
   --color-muted: #64748b;
   --color-accent: #2563eb;
   --color-accent-soft: #eff6ff;
+  --color-selection-text: #ffffff;
   --color-line: #e2e8f0;
   --color-void: #f7f8f3;
   --color-haze: #ffffff;
@@ -62,7 +64,7 @@ body {
 }
 
 ::selection {
-  color: #ffffff;
+  color: var(--color-selection-text);
   background: var(--color-accent);
 }
 
