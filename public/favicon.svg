@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Dhruv Zanzmera">
-  <rect width="64" height="64" rx="16" fill="#0c1512"/>
+  <rect width="64" height="64" rx="16" fill="#0d1117"/>
   <path
     d="M15 14h14.5C42.3 14 50 21.5 50 32S42.3 50 29.5 50H15V14Zm10 9v18h4.2c7 0 11.1-3.4 11.1-9S36.2 23 29.2 23H25Z"
-    fill="#c8ff65"
+    fill="#8ab4d6"
     fill-rule="evenodd"
   />
 </svg>
