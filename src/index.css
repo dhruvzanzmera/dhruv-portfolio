@@ -2,20 +2,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-paper: #0c1512;
-  --color-surface: #121e19;
-  --color-ink: #f3f6f2;
-  --color-muted: #aab8ae;
-  --color-accent: #c9f06b;
-  --color-accent-soft: #202b1a;
-  --color-selection-text: #0c1512;
-  --color-line: #29372f;
-  --color-void: #0c1512;
-  --color-haze: #121e19;
-  --color-bone: #f3f6f2;
-  --color-dim: #aab8ae;
-  --color-hot: #c9f06b;
-  --color-electric: #c9f06b;
+  --color-paper: #0d1117;
+  --color-surface: #151b23;
+  --color-ink: #edf1f5;
+  --color-muted: #a2abb7;
+  --color-accent: #8ab4d6;
+  --color-accent-soft: #1c2a38;
+  --color-selection-text: #0d1117;
+  --color-line: #29323e;
+  --color-void: #0d1117;
+  --color-haze: #151b23;
+  --color-bone: #edf1f5;
+  --color-dim: #a2abb7;
+  --color-hot: #8ab4d6;
+  --color-electric: #8ab4d6;
 }
 
 :root {
@@ -67,14 +67,14 @@ body {
 
 .hero-grid {
   background-image:
-    linear-gradient(to right, rgb(242 242 233 / 3%) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(242 242 233 / 3%) 1px, transparent 1px);
+    linear-gradient(to right, rgb(237 241 245 / 3%) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(237 241 245 / 3%) 1px, transparent 1px);
   background-size: 72px 72px;
   mask-image: linear-gradient(to bottom, black, transparent 85%);
 }
 
 .hero-glow {
-  background: radial-gradient(ellipse at 68% 46%, rgb(201 240 107 / 11%), transparent 48%);
+  background: radial-gradient(ellipse at 68% 46%, rgb(138 180 214 / 12%), transparent 48%);
 }
 
 @keyframes marquee {

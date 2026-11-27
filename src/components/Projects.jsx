@@ -43,7 +43,7 @@ function ProjectCard({ project, category, i }) {
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{
           background:
-            "radial-gradient(420px circle at var(--mx,50%) var(--my,50%), rgba(201,240,107,.10), transparent 45%)",
+            "radial-gradient(420px circle at var(--mx,50%) var(--my,50%), rgba(138,180,214,.10), transparent 45%)",
         }}
       />
 
